@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@color/item_press_bg" android:state_pressed="true">
+        <!--<shape>
+            <solid android:color="@color/item_press_bg" />
+        </shape>-->
+    </item>
+    <item android:drawable="@color/item_press_bg" android:state_focused="true"/>
+    <item android:drawable="@color/bg_color_white"/>
+</selector>

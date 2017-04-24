@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/tab_information"
+        android:icon="@drawable/read"
+        android:title="@string/tab_information"/>
+    <item
+        android:id="@+id/tab_cookbook"
+        android:icon="@drawable/cook"
+        android:title="@string/tab_cookbook"/>
+    <item
+        android:id="@+id/tab_medicine"
+        android:icon="@drawable/drug"
+        android:title="@string/tab_medicine"/>
+    <item
+        android:id="@+id/tab_profile"
+        android:icon="@drawable/my"
+        android:title="@string/tab_profile"/>
+
+
+</menu>

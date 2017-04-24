@@ -1,0 +1,52 @@
+<resources>
+    <string name="app_name">健康卫士</string>
+
+    <string name="tab_profile">我的</string>
+    <string name="tab_cookbook">养生菜谱</string>
+    <string name="tab_medicine">药品速查</string>
+    <string name="tab_information">养生知识</string>
+    <string name="keywords">关键字:</string>
+    <string name="tips">小贴士:</string>
+    <string name="price">参考售价:¥</string>
+    <string name="medicine_type">药品类型:</string>
+    <string name="favorite">我的收藏</string>
+    <string name="read_history">浏览历史</string>
+    <string name="more_settings">更多设置</string>
+    <string name="profile_item_cache_size">清除缓存</string>
+    <string name="profile_item_update">检查更新</string>
+    <string name="profile_item_about">关于</string>
+    <string name="profile_item_feedback">问题反馈</string>
+    <string name="favorite_success">收藏成功</string>
+    <string name="cancel_favorite">取消收藏</string>
+    <string name="clear_all_history">一键清除</string>
+    <string name="timeout">连接超时</string>
+    <string name="net_disconnected">无网络</string>
+    <string name="server_err">服务器错误</string>
+    <string name="no_such_data">没有该数据</string>
+    <string name="load_fail">加载失败</string>
+    <string name="no_more_data">没有更多</string>
+    <string name="delete_fail">删除失败</string>
+    <string name="update_fail">更新失败</string>
+    <string name="query_fail">查询失败</string>
+    <string name="unknown_error">未知错误</string>
+    <string name="has_no_history">暂无纪录</string>
+    <string name="warning_note">个人开源项目，禁止任何商业化</string>
+    <string name="powered_by">数据源自天狗云(http://www.tngou.net)</string>
+    <string name="author_note">Designed by yihaoBeta(yihaoBeta@163.com)</string>
+    <string name="price_unknown">参考价格:未知</string>
+    <string name="calc_cache_fail">计算缓存失败</string>
+    <string name="retry">网络异常，点击重试</string>
+    <string name="already_lasted_version">暂无更新</string>
+    <string name="choose_email_app">选择邮件客户端</string>
+    <string name="welcome_contact_me">欢迎提供意您的意见或建议</string>
+
+    <string-array name="tab_item_name">
+        <item>四季养生</item>
+        <item>老人健康</item>
+        <item>孩子健康</item>
+        <item>健康饮食</item>
+        <item>男性健康</item>
+        <item>女性保养</item>
+        <item>孕婴手册</item>
+    </string-array>
+</resources>

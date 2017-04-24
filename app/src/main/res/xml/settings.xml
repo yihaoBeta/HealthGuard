@@ -1,0 +1,33 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory android:title="网络设置">
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="use_mobile_net_preference"
+            android:summary="允许使用移动网络"
+            android:title="网络类型"/>
+    </PreferenceCategory>
+    <CheckBoxPreference
+        android:defaultValue="true"
+        android:key="no_picture_preference"
+        android:summary="无WiFi连接时不加载图片"
+        android:title="无图模式"/>
+    <CheckBoxPreference
+        android:defaultValue="true"
+        android:key="auto_update_on_wifi_preference"
+        android:summary="当wifi可用时自动下载更新文件"
+        android:title="自动下载更新"/>
+
+    <PreferenceCategory android:title="通用设置">
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="ads_preference"
+            android:summary="允许详情界面显示广告"
+            android:title="允许广告"/>
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="enable_browser_preference"
+            android:summary="允许详情页点击关键词跳转到浏览器"
+            android:title="允许跳转"/>
+    </PreferenceCategory>
+</PreferenceScreen>

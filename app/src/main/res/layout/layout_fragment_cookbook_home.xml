@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/layout_toolbar"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            >
+
+
+            <Button
+                android:id="@+id/btn_beauty"
+                android:layout_width="150dp"
+                android:layout_height="100dp"
+                android:layout_margin="@dimen/dp_10"
+                android:background="@mipmap/meirong"
+                android:gravity="end|center_vertical"
+                android:text="美容  "
+                android:textSize="20sp"/>
+
+            <Button
+                android:id="@+id/btn_healthcare"
+                android:layout_width="150dp"
+                android:layout_height="100dp"
+                android:layout_margin="@dimen/dp_10"
+                android:background="@mipmap/yangsheng"
+                android:gravity="start|center_vertical"
+                android:text=" 养生"
+                android:textSize="20sp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/dp_4"
+            android:paddingRight="@dimen/dp_4"
+            >
+
+            <Button
+                android:id="@+id/btn_slim"
+                android:layout_width="150dp"
+                android:layout_height="100dp"
+                android:layout_margin="@dimen/dp_10"
+                android:background="@mipmap/shoushen"
+                android:gravity="center|end"
+                android:text="瘦身 "
+                android:textSize="20sp"/>
+
+            <Button
+                android:id="@+id/btn_more"
+                android:layout_width="150dp"
+                android:layout_height="100dp"
+                android:layout_margin="@dimen/dp_10"
+                android:background="@mipmap/allclassify"
+                android:gravity="center|start"
+                android:text=" 更多"
+                android:textSize="20sp"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/help_button_view"
+        android:padding="@dimen/dp_4"
+        android:text="热门菜谱"
+        android:textSize="15sp"/>
+
+    <FrameLayout
+        android:id="@+id/fl_content_cooklist"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </FrameLayout>
+
+</LinearLayout>

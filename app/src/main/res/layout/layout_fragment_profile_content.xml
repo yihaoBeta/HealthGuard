@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+              android:background="@color/transparent"
+              android:orientation="vertical"
+    >
+
+    <LinearLayout
+        android:id="@+id/tool_bar_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="64.0dip"
+        android:background="@color/bg_color_white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        >
+
+
+        <LinearLayout
+            android:id="@+id/ll_favorite"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="5dp">
+
+            <ImageView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/favorite_selector"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@null"
+                android:text="@string/favorite"
+                android:textColor="@color/font_color"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_read_history"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="5dp">
+
+            <ImageView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/read_history_selector"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@null"
+                android:text="@string/read_history"
+                android:textColor="@color/font_color"
+
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_settings"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="5dp">
+
+            <ImageView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/more_settings_selector"
+
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@null"
+                android:text="@string/more_settings"
+                android:textColor="@color/font_color"
+
+                />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/horizontal_divider_one"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/profile_item_divider_height"
+        android:background="@color/page_item_divider"
+        />
+
+    <RelativeLayout
+        android:id="@+id/rl_profile_clear_cache"
+        style="@style/profile_content_item_root"
+        >
+
+        <TextView
+
+            android:id="@+id/tv_clear_cache"
+            style="@style/profile_content_item_tv"
+            android:text="@string/profile_item_cache_size"
+            android:textColor="@color/font_color"
+            />
+
+        <TextView
+            android:id="@+id/tv_profile_cache_size"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="9.0dip"
+            android:layout_toLeftOf="@+id/img_profile_clear_cache_right_arrow"
+            android:text="50KB"
+            android:textColor="@color/font_color"
+            android:textSize="14.0sp"/>
+
+        <ImageView
+            android:id="@+id/img_profile_clear_cache_right_arrow"
+            style="@style/profile_content_item_right_arrow"/>
+
+        <View
+            android:id="@+id/v_profile_clear_cache_divider"
+            style="@style/item_divider"
+            android:layout_alignParentBottom="true"
+            android:background="@color/page_item_divider"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_profile_update"
+        style="@style/profile_content_item_root"
+        >
+
+        <TextView
+            android:id="@+id/tv_profile_update"
+            style="@style/profile_content_item_tv"
+            android:text="@string/profile_item_update"
+            android:textColor="@color/font_color"
+            />
+
+        <TextView
+            android:id="@+id/tv_profile_current_version"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="9.0dip"
+            android:layout_toLeftOf="@+id/img_profile_update_right_arrow"
+            android:text="V1.1.0"
+            android:textColor="@color/font_color"
+            android:textSize="14.0sp"/>
+
+        <ImageView
+            android:id="@+id/img_profile_update_right_arrow"
+            style="@style/profile_content_item_right_arrow"/>
+
+        <View
+            android:id="@+id/v_profile_update_divider"
+            style="@style/item_divider"
+            android:layout_alignParentBottom="true"
+            android:background="@color/page_item_divider"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_profile_feedback"
+        style="@style/profile_content_item_root"
+        >
+
+        <TextView
+            android:id="@+id/tv_profile_feedback"
+            style="@style/profile_content_item_tv"
+            android:text="@string/profile_item_feedback"
+            android:textColor="@color/font_color"
+            />
+
+
+        <ImageView
+            android:id="@+id/img_profile_feedback_right_arrow"
+            style="@style/profile_content_item_right_arrow"/>
+
+        <View
+            android:id="@+id/v_profile_feedback_divider"
+            style="@style/item_divider"
+            android:layout_alignParentBottom="true"
+            android:background="@color/page_item_divider"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_profile_about"
+        style="@style/profile_content_item_root"
+        >
+
+        <TextView
+            android:id="@+id/tv_profile_about"
+            style="@style/profile_content_item_tv"
+            android:text="@string/profile_item_about"
+            android:textColor="@color/font_color"
+            />
+
+
+        <ImageView
+            android:id="@+id/img_profile_about_right_arrow"
+            style="@style/profile_content_item_right_arrow"/>
+
+        <View
+            android:id="@+id/v_profile_about_divider"
+            style="@style/item_divider"
+            android:layout_alignParentBottom="true"
+            android:background="@color/page_item_divider"/>
+    </RelativeLayout>
+
+</LinearLayout>

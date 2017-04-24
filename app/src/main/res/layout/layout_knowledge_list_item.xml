@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.yihaobeta.healthguard.view.RippleView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/item_ripple"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:rv_listMode="true"
+    app:rv_rippleDuration="1000"
+    app:rv_type="rectangle">
+
+    <ImageView
+        android:id="@+id/iv_img"
+        android:layout_width="@dimen/info_img_width"
+        android:layout_height="@dimen/info_img_height"
+        android:layout_margin="10dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_default"
+        />
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/iv_img"
+        android:layout_marginRight="10dp"
+        android:layout_toRightOf="@+id/iv_img"
+        android:lines="1"
+        android:maxLines="2"
+        android:text="里约奥运会"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"/>
+
+    <TextView
+        android:id="@+id/tv_source"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toEndOf="@+id/iv_img"
+        android:layout_toRightOf="@+id/iv_img"
+        android:lines="2"
+        android:text="网易原创"
+        android:textAppearance="@style/TextAppearance.AppCompat.Caption"/>
+
+    <TextView
+        android:id="@+id/tv_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/iv_img"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:text="2016-08-23 11:48:46"/>
+</com.yihaobeta.healthguard.view.RippleView>

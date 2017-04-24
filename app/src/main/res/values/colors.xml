@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="page_item_divider">#e8e8e8</color>
+    <color name="window_background">#FFF5F5F5</color>
+    <color name="font_color">#5a5857</color>
+    <color name="item_press_bg">#beb7b7</color>
+    <color name="bg_color_white">#ffffffff</color>
+    <color name="bg_action_mode">#673AB7</color>
+</resources>

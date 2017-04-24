@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="toolbar_margin_top">0dp</dimen>
+    <dimen name="tab_layout_height">38dp</dimen>
+    <dimen name="info_img_width">100dp</dimen>
+    <dimen name="info_img_height">75dp</dimen>
+    <dimen name="header_height">180dp</dimen>
+    <dimen name="detail_backdrop_height">256dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="profile_item_divider_height">10dp</dimen>
+</resources>
