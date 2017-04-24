@@ -39,6 +39,7 @@
     <string name="already_lasted_version">暂无更新</string>
     <string name="choose_email_app">选择邮件客户端</string>
     <string name="welcome_contact_me">欢迎提供意您的意见或建议</string>
+    <string name="detail_classify">详细分类</string>
 
     <string-array name="tab_item_name">
         <item>四季养生</item>

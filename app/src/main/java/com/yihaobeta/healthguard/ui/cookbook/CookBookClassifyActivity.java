@@ -20,6 +20,8 @@ import com.yihaobeta.healthguard.beans.CookBookClassify;
 import com.yihaobeta.healthguard.dagger.component.DaggerCookBookClassifyComponent;
 import com.yihaobeta.healthguard.dagger.modules.CookBookClassifyModule;
 
+import javax.inject.Inject;
+
 import butterknife.BindView;
 
 /**
@@ -33,6 +35,7 @@ public class CookBookClassifyActivity extends BaseActivity {
     RecyclerView rv_classify;
     @BindView(R.id.tool_bar)
     Toolbar mToolbar;
+    @Inject
     CookBookClassifyAdapter mAdapter;
 
     public static void start(Context context) {
@@ -56,8 +59,7 @@ public class CookBookClassifyActivity extends BaseActivity {
 
     @Override
     protected void init() {
-        handleToolBar(mToolbar, true, getString(R.string.tab_cookbook), "详细分类");
-//        mAdapter = new CookBookClassifyAdapter(this);
+        handleToolBar(mToolbar, true, getString(R.string.tab_cookbook), getString(R.string.detail_classify));
         rv_classify.setLayoutManager(new LinearLayoutManager(this));
         rv_classify.setItemAnimator(new DefaultItemAnimator());
         rv_classify.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
