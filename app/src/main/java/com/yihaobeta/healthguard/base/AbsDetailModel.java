@@ -24,7 +24,6 @@ import rx.functions.Func1;
 public abstract class AbsDetailModel<T extends BaseDetailBean> implements IRemoteModel, ILocalModel {
 
     protected ILocalCallBack.PresenterCallBack mCallBack;
-    private Subscription mSubscription;
 
     public AbsDetailModel(ILocalCallBack.PresenterCallBack callback) {
         this.mCallBack = callback;
@@ -39,9 +38,8 @@ public abstract class AbsDetailModel<T extends BaseDetailBean> implements IRemot
                 .unique();
     }
 
-    protected void getData(final int type, final int id) {
-        unsubscribe();
-        mSubscription = isLocaled(type, id)
+    protected Subscription getData(final int type, final int id) {
+        return isLocaled(type, id)
                 //flatmap变换，判断数据源的获取方式
                 .flatMap(new Func1<UniversalDetailEntity, Observable<UniversalDetailEntity>>() {
                     @Override
@@ -88,12 +86,6 @@ public abstract class AbsDetailModel<T extends BaseDetailBean> implements IRemot
                     }
                 });
 
-    }
-
-    private void unsubscribe() {
-        if (mSubscription != null && !mSubscription.isUnsubscribed()) {
-            mSubscription.unsubscribe();
-        }
     }
 
     public UniversalDetailEntity isLocaled(UniversalDetailEntity data) {

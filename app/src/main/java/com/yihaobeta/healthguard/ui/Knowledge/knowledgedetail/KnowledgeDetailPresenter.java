@@ -29,7 +29,7 @@ public class KnowledgeDetailPresenter extends BaseDetailPresenter<Integer, Integ
 
     @Override
     public void loadData(Integer id, Integer integer) {
-        mModel.getData(ConstantValue.TYPE_KNOWLEDGE, id);
+        setSubscription(mModel.getData(ConstantValue.TYPE_KNOWLEDGE, id));
     }
 
     @Override
@@ -65,6 +65,5 @@ public class KnowledgeDetailPresenter extends BaseDetailPresenter<Integer, Integ
         Logger.d(state.getStateDescription());
         mView.onDataLoadFail(state);
     }
-
 
 }

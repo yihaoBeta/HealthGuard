@@ -28,7 +28,7 @@ public class MedicineDetailPresenter extends BaseDetailPresenter<String, Integer
 
     @Override
     public void loadData(String param, Integer type) {
-        mModel.getDataFromServer(param, type);
+        setSubscription(mModel.getDataFromServer(param, type));
     }
 
     @Override

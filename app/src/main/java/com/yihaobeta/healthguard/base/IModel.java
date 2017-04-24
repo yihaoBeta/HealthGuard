@@ -1,5 +1,7 @@
 package com.yihaobeta.healthguard.base;
 
+import rx.Subscription;
+
 /**
  * description: Model接口
  * author: yihaoBeta
@@ -8,5 +10,5 @@ package com.yihaobeta.healthguard.base;
  * version: v1.0
  */
 public interface IModel<T, M, P> {
-    void getDataFromServer(T t, M m, IBaseCallBack<P> callBack);
+    Subscription getDataFromServer(T t, M m, IBaseCallBack<P> callBack);
 }

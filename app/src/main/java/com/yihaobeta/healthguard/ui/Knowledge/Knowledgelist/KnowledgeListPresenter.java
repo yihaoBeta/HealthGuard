@@ -6,6 +6,8 @@ import com.yihaobeta.healthguard.base.IPresenter;
 import com.yihaobeta.healthguard.beans.KnowledgeList;
 import com.yihaobeta.healthguard.common.ResponseState;
 
+import rx.Subscription;
+
 /**
  * Created by yihaobeta on 2017/3/10.
  */
@@ -25,7 +27,7 @@ public class KnowledgeListPresenter implements IPresenter<Integer, Integer> {
     @Override
     public void loadData(Integer id, Integer page) {
 
-        mModel.getDataFromServer(id, page, new IBaseCallBack<KnowledgeList>() {
+        Subscription subscription = mModel.getDataFromServer(id, page, new IBaseCallBack<KnowledgeList>() {
             @Override
             public void onSuccess(KnowledgeList data) {
                 mView.onDataLoaded(data);
@@ -36,6 +38,7 @@ public class KnowledgeListPresenter implements IPresenter<Integer, Integer> {
                 mView.onDataLoadFail(state);
             }
         });
+        mView.setSubscription(subscription);
     }
 
     @Override

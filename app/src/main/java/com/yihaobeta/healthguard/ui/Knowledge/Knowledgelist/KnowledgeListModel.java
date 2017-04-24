@@ -18,17 +18,12 @@ import rx.Subscription;
 
 public class KnowledgeListModel implements IModel<Integer, Integer, KnowledgeList> {
 
-    private Subscription mSubscription;
-
     @Override
-    public void getDataFromServer(Integer id, Integer page, final IBaseCallBack<KnowledgeList> callBack) {
+    public Subscription getDataFromServer(Integer id, Integer page, final IBaseCallBack<KnowledgeList> callBack) {
         if (id <= 0) {
             id = 10;
         }
-        if (mSubscription != null && !mSubscription.isUnsubscribed()) {
-            mSubscription.unsubscribe();
-        }
-        mSubscription = RetrofitUtils.getApiService().getKnowledgeList(id.intValue(), page.intValue(), 20)
+        return RetrofitUtils.getApiService().getKnowledgeList(id.intValue(), page.intValue(), 20)
                 .compose(RxJavaUtils.<KnowledgeList>applySchedulers())
                 .subscribe(new Subscriber<KnowledgeList>() {
 

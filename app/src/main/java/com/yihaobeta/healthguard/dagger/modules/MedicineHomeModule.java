@@ -4,10 +4,10 @@ import android.content.Context;
 
 import com.yihaobeta.healthguard.adapter.MedicineClassifyAdapter;
 import com.yihaobeta.healthguard.adapter.MedicineListAdapter;
-import com.yihaobeta.healthguard.base.IView;
 import com.yihaobeta.healthguard.beans.MedicineList;
 import com.yihaobeta.healthguard.common.SettingChangeBroadcastReceiver;
 import com.yihaobeta.healthguard.dagger.scope.FragmentScope;
+import com.yihaobeta.healthguard.ui.medicine.MedicineHomeFragment;
 import com.yihaobeta.healthguard.ui.medicine.MedicineHomePresenter;
 
 import java.util.ArrayList;
@@ -22,9 +22,9 @@ import dagger.Provides;
 public class MedicineHomeModule {
     private MedicineListAdapter mAdapter;
     private Context mContext;
-    private IView mView;
+    private MedicineHomeFragment mView;
 
-    public MedicineHomeModule(Context context, IView view) {
+    public MedicineHomeModule(Context context, MedicineHomeFragment view) {
         mContext = context;
         mView = view;
         mAdapter = new MedicineListAdapter(mContext, new ArrayList<MedicineList.MedicineSummary>());

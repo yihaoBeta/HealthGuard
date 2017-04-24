@@ -3,10 +3,10 @@ package com.yihaobeta.healthguard.dagger.modules;
 import android.content.Context;
 
 import com.yihaobeta.healthguard.adapter.CookBookListAdapter;
-import com.yihaobeta.healthguard.base.IView;
 import com.yihaobeta.healthguard.beans.CookBookList;
 import com.yihaobeta.healthguard.common.SettingChangeBroadcastReceiver;
 import com.yihaobeta.healthguard.dagger.scope.FragmentScope;
+import com.yihaobeta.healthguard.ui.cookbook.CookBookListFragment;
 import com.yihaobeta.healthguard.ui.cookbook.CookBookListPresenter;
 
 import java.util.ArrayList;
@@ -19,11 +19,11 @@ import dagger.Provides;
  */
 @Module
 public class CookBookListModule {
-    private IView mView;
+    private CookBookListFragment mView;
     private Context mContext;
     private CookBookListAdapter mAdapter;
 
-    public CookBookListModule(Context context, IView view) {
+    public CookBookListModule(Context context, CookBookListFragment view) {
         mView = view;
         mContext = context;
         mAdapter = new CookBookListAdapter(new ArrayList<CookBookList.CookBookSummary>());

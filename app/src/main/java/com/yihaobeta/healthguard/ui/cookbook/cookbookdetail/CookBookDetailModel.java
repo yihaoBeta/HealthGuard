@@ -6,6 +6,7 @@ import com.yihaobeta.healthguard.beans.CookBookDetail;
 import com.yihaobeta.healthguard.common.RetrofitUtils;
 
 import rx.Observable;
+import rx.Subscription;
 
 /**
  * Created by yihaobeta on 2017/3/27.
@@ -18,8 +19,8 @@ public class CookBookDetailModel extends AbsDetailModel<CookBookDetail> {
         super(callback);
     }
 
-    public void getData(int type, int id) {
-        super.getData(type, id);
+    public Subscription getData(int type, int id) {
+        return super.getData(type, id);
     }
 
     @Override

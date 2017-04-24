@@ -17,14 +17,11 @@ import rx.Subscription;
  */
 
 public class MedicineHomeModel implements IModel<Integer, Integer, MedicineList> {
-    private Subscription mSubscription;
 
     @Override
-    public void getDataFromServer(Integer id, Integer page, final IBaseCallBack<MedicineList> callBack) {
-        if (mSubscription != null && !mSubscription.isUnsubscribed()) {
-            mSubscription.unsubscribe();
-        }
-        mSubscription = RetrofitUtils.getApiService().getMedicineList(id.intValue(), page.intValue(), 20)
+    public Subscription getDataFromServer(Integer id, Integer page, final IBaseCallBack<MedicineList> callBack) {
+
+        return RetrofitUtils.getApiService().getMedicineList(id.intValue(), page.intValue(), 20)
                 .compose(RxJavaUtils.<MedicineList>applySchedulers())
                 .subscribe(new Subscriber<MedicineList>() {
 

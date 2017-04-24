@@ -3,6 +3,8 @@ package com.yihaobeta.healthguard.base;
 import com.orhanobut.logger.Logger;
 import com.yihaobeta.healthguard.database.entity.UniversalDetailEntity;
 
+import rx.Subscription;
+
 /**
  * description: 详情presenter抽象基类
  * author: yihaoBeta
@@ -15,9 +17,14 @@ public abstract class BaseDetailPresenter<T, M> implements IDetailPresenter<T, M
     public IDetailView mView;
     private boolean isFav = false;
     private UniversalDetailEntity mData = null;
+    private Subscription mSubscription;
 
     public BaseDetailPresenter(IDetailView view) {
         this.mView = view;
+    }
+
+    public void setSubscription(Subscription subscription) {
+        mSubscription = subscription;
     }
 
     /**
@@ -55,6 +62,15 @@ public abstract class BaseDetailPresenter<T, M> implements IDetailPresenter<T, M
         mData.setFavorite(!isFav);
         updateData2DB(mData);
     }
+
+    public void unsubscribe() {
+
+        if (mSubscription != null && !mSubscription.isUnsubscribed()) {
+            Logger.d("unsubscribe");
+            mSubscription.unsubscribe();
+        }
+    }
+
 
     /**
      * 数据库更新

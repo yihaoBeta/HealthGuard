@@ -7,6 +7,7 @@ import com.yihaobeta.healthguard.beans.KnowledgeDetail;
 import com.yihaobeta.healthguard.common.RetrofitUtils;
 
 import rx.Observable;
+import rx.Subscription;
 
 
 /**
@@ -19,9 +20,9 @@ public class KnowledgeDetailModel extends AbsDetailModel<KnowledgeDetail> {
         super(callback);
     }
 
-    public void getData(int type, int id) {
+    public Subscription getData(int type, int id) {
         Logger.d(type + "," + id);
-        super.getData(type, id);
+        return super.getData(type, id);
     }
 
     @Override

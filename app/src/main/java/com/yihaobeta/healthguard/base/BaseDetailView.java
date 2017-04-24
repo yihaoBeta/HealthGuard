@@ -21,7 +21,7 @@ import butterknife.OnClick;
  * version: v1.0
  */
 
-public abstract class BaseDetailView<T, V extends IDetailPresenter> extends BaseActivity implements IDetailView<T> {
+public abstract class BaseDetailView<T, V extends BaseDetailPresenter> extends BaseActivity implements IDetailView<T> {
 
     protected boolean isFirst = true;
     protected V mPresenter;
@@ -61,6 +61,7 @@ public abstract class BaseDetailView<T, V extends IDetailPresenter> extends Base
 
     @Override
     public void finish() {
+        mPresenter.unsubscribe();
         if (isFromFavorite) {
             Logger.d(isDelete);
             Logger.d(getIntent().getIntExtra(ConstantValue.INTENT_POSITION, 4));

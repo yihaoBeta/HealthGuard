@@ -45,21 +45,18 @@ public class MedicineDetailModel extends AbsDetailModel<MedicineDetail> {
      * @param param
      * @param type
      */
-    public void getDataFromServer(String param, Integer type) {
-        unSubscripte();
+    public Subscription getDataFromServer(String param, Integer type) {
         Logger.e(param + "," + type);
         switch (type.intValue()) {
             case MedicineDetailActivity.SEARCH_BY_ID:
                 observable = RetrofitUtils.getApiService().getMedicineDetailByID(Integer.valueOf(param));
-                super.getData(ConstantValue.TYPE_MEDICINE, Integer.valueOf(param));
-                break;
+                return super.getData(ConstantValue.TYPE_MEDICINE, Integer.valueOf(param));
             case MedicineDetailActivity.SEARCH_BY_NAME:
                 observable = RetrofitUtils.getApiService().getMedicineDetailByName(param);
-                getDataByTitle(ConstantValue.TYPE_MEDICINE, param);
-                break;
+                return getDataByTitle(ConstantValue.TYPE_MEDICINE, param);
             case MedicineDetailActivity.SEARCH_BY_CODE:
                 observable = RetrofitUtils.getApiService().getMedicineDetailByCode(param);
-                mSubscription = getDataFromServer()
+                return getDataFromServer()
                         .filter(new Func1<UniversalDetailEntity, Boolean>() {
                             @Override
                             public Boolean call(UniversalDetailEntity universalDetailEntity) {
@@ -85,10 +82,9 @@ public class MedicineDetailModel extends AbsDetailModel<MedicineDetail> {
                                 mCallBack.onDataLoadComplete(universalDetailEntity);
                             }
                         });
-                break;
             default:
                 mCallBack.onError(null);
-                return;
+                return null;
         }
 
     }
@@ -110,9 +106,9 @@ public class MedicineDetailModel extends AbsDetailModel<MedicineDetail> {
                 });
     }
 
-    public void getDataByTitle(final int type, final String title) {
+    public Subscription getDataByTitle(final int type, final String title) {
 
-        super.isLocaled(type, title)
+        return super.isLocaled(type, title)
                 .flatMap(new Func1<UniversalDetailEntity, Observable<UniversalDetailEntity>>() {
                     @Override
                     public Observable<UniversalDetailEntity> call(UniversalDetailEntity universalDetailEntity) {

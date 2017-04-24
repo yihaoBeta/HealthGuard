@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import com.yihaobeta.healthguard.dagger.component.AppComponent;
 
 import butterknife.ButterKnife;
+import rx.Subscription;
 
 /**
  * description: Fragment基类
@@ -26,6 +27,7 @@ public abstract class BaseFragment extends android.support.v4.app.Fragment {
     private View mRootView;
     private boolean bIsFirstCreate = false;
     private Context mContext;
+    private Subscription mSubscription;
 
     @Nullable
     @Override
@@ -116,4 +118,18 @@ public abstract class BaseFragment extends android.support.v4.app.Fragment {
      */
     protected abstract void initDagger();
 
+    public void setSubscription(Subscription subscription) {
+        this.mSubscription = subscription;
+    }
+
+    protected void unsubscribe() {
+        if (mSubscription != null && !mSubscription.isUnsubscribed())
+            mSubscription.unsubscribe();
+    }
+
+    @Override
+    public void onDestroy() {
+        unsubscribe();
+        super.onDestroy();
+    }
 }

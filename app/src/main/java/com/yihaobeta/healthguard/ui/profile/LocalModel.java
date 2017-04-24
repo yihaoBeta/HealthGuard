@@ -40,7 +40,7 @@ public class LocalModel extends BaseLocalModel {
                 .filter(new Func1<UniversalDetailEntity, Boolean>() {
                     @Override
                     public Boolean call(UniversalDetailEntity universalDetailEntity) {
-                        return universalDetailEntity.getFavorite();
+                        return !universalDetailEntity.getFavorite();
                     }
                 })
                 .compose(RxJavaUtils.<UniversalDetailEntity>applySchedulers())

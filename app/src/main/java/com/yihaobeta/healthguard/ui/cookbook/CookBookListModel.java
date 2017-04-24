@@ -15,14 +15,11 @@ import rx.Subscription;
  */
 
 public class CookBookListModel implements IModel<Integer, Integer, CookBookList> {
-    private Subscription mSubscription;
 
     @Override
-    public void getDataFromServer(Integer id, Integer page, final IBaseCallBack<CookBookList> callBack) {
-        if (mSubscription != null && !mSubscription.isUnsubscribed()) {
-            mSubscription.unsubscribe();
-        }
-        mSubscription = RetrofitUtils.getApiService().getCookListById(id.intValue(), page.intValue(), 20)
+    public Subscription getDataFromServer(Integer id, Integer page, final IBaseCallBack<CookBookList> callBack) {
+
+        return RetrofitUtils.getApiService().getCookListById(id.intValue(), page.intValue(), 20)
                 .compose(RxJavaUtils.<CookBookList>applySchedulers())
                 .subscribe(new Subscriber<CookBookList>() {
                     @Override

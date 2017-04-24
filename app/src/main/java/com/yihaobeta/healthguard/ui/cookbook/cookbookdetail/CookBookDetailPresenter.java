@@ -29,7 +29,7 @@ public class CookBookDetailPresenter extends BaseDetailPresenter<Integer, Intege
 
     @Override
     public void loadData(Integer id, Integer integer2) {
-        mModel.getData(ConstantValue.TYPE_COOKBOOK, id);
+        setSubscription(mModel.getData(ConstantValue.TYPE_COOKBOOK, id));
     }
 
     @Override

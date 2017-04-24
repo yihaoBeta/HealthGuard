@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
 import butterknife.ButterKnife;
+import rx.Subscription;
 
 /**
  * Created by yihaobeta on 2017/3/9.
@@ -14,7 +15,7 @@ import butterknife.ButterKnife;
  */
 
 public abstract class BaseActivity extends AppCompatActivity {
-
+    protected Subscription mSubscription;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,5 +58,20 @@ public abstract class BaseActivity extends AppCompatActivity {
             toolbar.setSubtitle(subTitile);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(homeAsUpEnabled);
+    }
+
+    protected void setSubscription(Subscription subscription) {
+        this.mSubscription = subscription;
+    }
+
+    protected void unsubscribe() {
+        if (mSubscription != null && !mSubscription.isUnsubscribed())
+            mSubscription.unsubscribe();
+    }
+
+    @Override
+    protected void onDestroy() {
+        unsubscribe();
+        super.onDestroy();
     }
 }
